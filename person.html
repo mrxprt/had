@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+
+
+
+<script type="text/javascript">
+var lang;
+var query = window.location.search;
+  // Skip the leading ?, which should always be there, 
+  // but be careful anyway
+  if (query.substring(0, 1) == '?') {
+    query = query.substring(1);
+  }
+  var dats = query.split(','); 
+  for (i = 0; (i < dats.length); i++) {
+    dats[i] = unescape(dats[i]);
+  }
+  
+lang=dats[0];
+
+var ads;
+var header;
+
+
+var info;
+var interst;
+var Social;
+var ads;
+
+
+if( lang=='ar'){
+	ads='إعلانات';
+	header='المعرض والمؤتمر الدولي للتعليم <br> العالي 2011';
+document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/persons_ar.css" >');
+info='معلومات';
+interst='الاهتمامات';
+Social=' تواصل معي';
+}else {
+	ads='Ads';
+header='Intl Exh & Conf on Higher<br>Education 2011';
+document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/persons_en.css" >');
+info='Information';
+interst='Interst';
+Social='Contact Me';
+}
+
+
+
+function goBack(){
+	
+}
+function goHome(){
+	
+}
+
+</script>
+
+
+<body >
+ 
+		<div id="header">
+     		<a id="homeURL1">
+ <img class="backPerson" onClick="goBack();" src="images/spacer.png"/></a>
+<a id="homeURL" ><img class="home" onClick="goHome();"src="images/spacer.png"/></a>
+			<h5>    <script >
+			document.getElementById('homeURL').href='index.html?'+lang;
+			document.getElementById('homeURL1').href='attendees.html?'+lang;
+			document.write(header);</script> </h5>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+     
+    <ul id="Events_html">
+
+    <li id="Person_Detalis"></li>
+    </ul></div>
+    <div id="home">
+               
+ 
+    <h1><a > <script> document.write(info);</script> </a></h1>
+        <ul id="Events_html">
+    <li id="Person_About"></li>
+    </ul></div>
+    <div id="home">
+                
+    <h1><a ><script> document.write(interst);</script> </a></h1>
+        <ul id="Events_html">
+    <li id="Person_Topics"></li>
+    </ul>
+	</div>
+    
+        <div id="home">    
+    <h1><a ><script> document.write(Social);</script></a></h1>
+        <ul id="Events_html">
+    <li id="Person_ٍSocial"></li>
+    </ul>
+	</div>
+
+
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+</div>
+</div>
+		</div>
+        
+        
+       
+
+<script>
+
+
+  data=dats[1]-1;
+  
+getattendees(callback);
+ function callback(string,htmlID ){
+htmll1=[];
+	 var array=eval(string);
+
+ var result = document.getElementById('Person_Detalis'); 
+		htmll1.push('<a  class="person" ><img class="person" src="'+array[data].IImage+'"/><h2>'+array[data].Name+'</h2><h3>'+array[data].Company+'<br>'+array[data].Position+'<br>'+array[data].WebSite+'</h3></a>' );
+	 	result.innerHTML = htmll1.join('');
+		
+htmll1=[];
+var result = document.getElementById('Person_About'); 
+htmll1.push('<a  class="person" > <h3>'+array[data].AboutME+'</h3></a>' );
+result.innerHTML = htmll1.join('');
+
+
+htmll1=[];
+var result = document.getElementById('Person_Topics'); 
+htmll1.push('<a class="person"> <h3>'+array[data].Interest+'</h3></a>' );
+result.innerHTML = htmll1.join('');
+
+
+
+htmll1=[];
+var result = document.getElementById('Person_ٍSocial'); 
+htmll1.push('<a href="javascript:goTo('+array[data].Twitter+')"  class="person" "> <br>'+
+'<img class ="exhibitor" src="images/tw.png"  ></img></a><a href="javascript:goTo('+array[data].FaceBook+')"  class="person" "><img src="images/fb.png"  ></img></a><a href="javascript:goTo('+array[data].linkIn+')"  class="person" "><img src="images/lin.png"></img>'
++'</a><br><br><br><br>'
+ );
+result.innerHTML = htmll1.join('');
+
+function goTo(url){
+	window.location.href="url";
+
+}
+ /*
+	 htmll1=[];
+ var result = document.getElementById('Person_Detalis');
+
+htmll1.push('<a  class="person" ><img class="person" src="'+personImg+'"/><h2>'+personName+'</h2><h3>'+personCompany+'<br>'+personPosition+'<br>'+personLink+'</h3></a>');
+result = htmll1.join('');	
+
+	 htmll1=[];
+ var result = document.getElementById('Person_Detalis');
+ 
+htmll1.push('<a  class="person" ><img class="person" src="'+personImg+'"/><h2>'+personName+'</h2><h3>'+personCompany+'<br>'+personPosition+'<br>'+personLink+'</h3></a>');
+result = htmll1.join('');	
+	 
+  
+*/
+ }
+  
+ </script>
+
+
+	</body>
+</html>

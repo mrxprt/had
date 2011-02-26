@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+<script type="text/javascript" src="js/onloadEvent.js" ></script>
+</script>
+
+<script>
+var lang;
+ var query = window.location.search;
+  // Skip the leading ?, which should always be there, 
+  // but be careful anyway
+  if (query.substring(0, 1) == '?') {
+    query = query.substring(1);
+  }
+  var data = query.split(','); 
+  for (i = 0; (i < data.length); i++) {
+    data[i] = unescape(data[i]);
+  }
+
+if(data=='ar'){
+lang='ar';	
+}else if(data=='en'){
+lang='en';	
+}else {
+	lang='ar';	
+}
+var header;
+var ads;
+var lango;
+var langTi;
+
+if( lang=='ar'){
+ads='إعلانات';
+lango='خصائص';
+header='المعرض والمؤتمر الدولي<br>للتعليم  العالي 2011'
+langTi='لوحة التحكم';
+document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/mobile_ar.css" >');
+document.write('<link rel="stylesheet" type="text/css" href="Css/images_ar.css">');
+}else {
+ads='Ads';
+lango='Settings';
+langTi='Control Panel';
+header='Intl Exh & Conf on Higher<br>Education 2011';
+document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/mobile_en.css" >');
+document.write('<link rel="stylesheet" type="text/css" href="Css/images_en.css">');
+}
+
+function changeLang(){
+ if( lang=='ar'){
+ window.location = "settings.html?ar";	 
+ }if( lang=='en'){ 
+	 window.location = "settings.html?en";	  
+ }
+
+	
+
+}
+
+</script>
+<body   >
+
+
+		<div id="header">
+			<h5> <script> document.write(header);</script> </h5>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+    
+    <ul id="categores" ><!--
+<li class="agenda" >
+
+            <h2><a href="agenda.html"> جدول الأعمال</a></h2>
+
+        </li>
+<li class="attendees" >
+            <h2><a href="attendees.html">الحصور</a></h2>
+              
+        </li>
+
+<li class="speakers" >
+
+            <h2><a href="speakers.html">المتحدثون</a></h2>
+</li>
+<li class="exhibitors" >
+            <h2><a href="exhibitors.html">العارضون</a></h2>
+</li>  
+<li class="livefeeds" >
+
+            <h2><a href="feedscats.html">Live Feeds </a></h2>
+            </li>
+ <li class="favos" >
+
+            <h2><a href="favos.html"> المفضلة </a></h2>
+            </li>
+            <!--
+<li class="eventsurvey" >
+
+            <h2><a href="#">استصقاء الأحداث</a></h2>
+            </li>
+<li class="alerts" >
+
+            <h2><a href="#">التنبيهات</a></h2>
+           
+        </li>
+<li class="info" >
+            <h2><a href="#">معلومات</a></h2>
+           
+        </li>
+        <li class="map" >
+            <h2><a href="maps.html">خريطة الحدث</a></h2>
+           
+        </li>-->
+</div>
+        <div id="home">
+    
+    
+    
+    
+</div>
+
+			<div id="home">
+    <h1><a ><script> document.write(langTi);</script> </a></h1>
+     <ul id="categores" >
+             <li  >
+            <h2><a href="javascript:changeLang()"><script> document.write(lango);</script></a></h2>
+           
+        </li>
+
+         </ul></div>
+    
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+<li>
+   <script> document.write('<a href="mobilesoft.html?'+lang+',1">');</script>
+  <img class="power"  src="images/fotter.png"  /></a><br>
+</li>        
+<li>
+  <img border="0" src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+
+</div>
+</div>
+		</div>
+
+
+
+<script>
+getCats(callback);
+
+ function callback(string,htmlID ){
+	 htmll1=[];
+	 var result = document.getElementById(htmlID); 
+	 var array=eval(string);
+
+	
+	
+	 for(var i=0;i<array.length;i++){
+
+
+	htmll1.push('<ul id="categores" ><li class="'+array[i].IImage+'"><h2><a href="'+array[i].page+'?'+lang+'">'+array[i].title+'</a></h2></li></ul>');
+	 result.innerHTML = htmll1.join('');		 
+		 
+	 }
+ }
+</script>
+
+	</body>
+        <script src="js/db.js" ></script>
+</html>

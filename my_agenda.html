@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="EXPIRES" CONTENT="01 Jan 1970 00:00:00 GMT">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+
+
+
+<script type="text/javascript">
+
+
+
+var header='أجندة الحدث';
+var ads;
+
+var lang=' ';
+
+if( lang=='ar'){
+	ads='إعلانات';
+document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/pages_ar.css" >');
+}else {
+	ads='Ads';
+document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/pages_en.css" >');
+}
+</script>
+
+
+
+ 
+
+
+<body >
+
+
+		<div id="header"> 
+        <a HREF="javascript:history.back()">
+ <img class="back" onClick="goBack();" src="images/spacer.png"/></a>
+<a HREF="index.html"><img class="home" onClick="goHome();" src="images/spacer.png"/></a>
+			<h1>   <script >document.write(header);</script> </h1>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+    
+    <ul id="Events_html">
+    
+
+        
+    </ul>
+    <script>
+	/*
+var events=['افتتاح المعرض','حدث 2','حدث 3','حدث 4','حدث 5','حدث 6','حدث 7'];
+var Locations=['صالة : 1','صالة 2 ','صالة 3 ','صالة 4 ','صالة 5 ','صالة 6 ','صالة 7 '];
+var Time=['9:0 am to 11:00 Pm','9:0 am','9:0 am','9:0 am','9:0 am','9:0 am','9:0 am'];
+var Link=['event.html'];
+
+var html=[];
+var i;
+
+for( i=0;i<events.length;i++){
+html.push('<li><a href="'+Link[0]+'"><h2>'+events[i] +'<br></h2>'+'<h3>'+Locations[i]+'<br>'+Time[i]+'</h3></a></li>');	
+
+}
+
+var Events_html = document.getElementById('Events_html'); 
+
+Events_html.innerHTML = html.join('');*/
+	</script>
+</div>
+
+
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" class="ads"  src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+</div>
+</div>
+
+
+
+
+<script>
+getEvents(callback);
+
+ function callback(string,htmlID ){
+	 var result = document.getElementById(htmlID); 
+	 var array=eval(string);
+	 	 htmll1=[];
+	 for(var i=0;i<array.length;i++){
+		 
+htmll1.push('<ul id="Events_html"><li><a href="javascript:sendData('+array[i].ID+')"><h2>'+array[i].Name +'<br></h2>'+'<h3>'+array[i].Hall+'<br>'+array[i].day+'<br>'+array[i].Time+'</h3></a></li></ul>');	
+
+	 result.innerHTML = htmll1.join('');		 
+	 
+	 /*
+htmll1.push('<li><a href="'+array[i].Page+'"><h2>'+array[i].Name +'<br></h2>'+'<h3>'+array[i].Hall+'<br>'+array[i].day+'<br>'+array[i].Time+'</h3></a></li>');	
+
+	 result.innerHTML = htmll1.join('');		 */
+		 
+	 }
+ }
+function sendData(id){
+ window.location = "event.html?" + id;
+	
+}
+</script>
+		</div>
+
+	</body>
+</html>

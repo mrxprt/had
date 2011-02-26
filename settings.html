@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+<script type="text/javascript" src="js/onloadEvent.js" ></script>
+</script>
+
+<script>
+var lang;
+ var query = window.location.search;
+  // Skip the leading ?, which should always be there, 
+  // but be careful anyway
+  if (query.substring(0, 1) == '?') {
+    query = query.substring(1);
+  }
+  var data = query.split(','); 
+  for (i = 0; (i < data.length); i++) {
+    data[i] = unescape(data[i]);
+  }
+
+if(data=='ar'){
+lang='ar';	
+}else if(data=='en'){
+lang='en';	
+}else {
+	lang='ar';	
+}
+var header;
+var ads;
+var lango;
+var langTi;
+
+if( lang=='ar'){
+ads='إعلانات';
+lango='English';
+header='لوحة التحكم'
+langTi='اللغة';
+
+document.write('<link rel="stylesheet" type="text/css" href="Css/mobile_ar.css" >');
+}else {
+ads='Ads';
+lango='العربية';
+langTi='Language';
+header='Control Panel';
+
+document.write('<link rel="stylesheet" type="text/css" href="Css/mobile_en.css" >');
+
+}
+
+function changeLang(){
+ if( lang=='ar'){
+ window.location = "index.html?en";	 
+ }if( lang=='en'){ 
+	 window.location = "index.html?ar";	  
+ }
+
+	
+
+}
+
+</script>
+<body >
+
+
+		<div id="header">
+			<h5> <script> document.write(header);</script> </h5>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			
+        <div id="home">
+    
+    
+    
+    
+</div>
+
+			<div id="home">
+    <h1><a ><script> document.write(langTi);</script> </a></h1>
+     <ul id="categores" >
+             <li  >
+            <h2><a href="javascript:changeLang()"><script> document.write(lango);</script></a></h2>
+           
+        </li>
+
+         </ul></div>
+    
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+
+</div>
+</div>
+		</div>
+
+
+
+<script>
+getCats(callback);
+
+ function callback(string,htmlID ){
+	 htmll1=[];
+	 var result = document.getElementById(htmlID); 
+	 var array=eval(string);
+
+	
+	
+	 for(var i=0;i<array.length;i++){
+
+
+	htmll1.push('<ul id="categores" ><li class="'+array[i].IImage+'"><h2><a href="'+array[i].page+'?'+lang+'">'+array[i].title+'</a></h2></li></ul>');
+	 result.innerHTML = htmll1.join('');		 
+		 
+	 }
+ }
+</script>
+
+	</body>
+        <script src="js/db.js" ></script>
+</html>

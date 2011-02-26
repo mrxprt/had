@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+
+
+<script>
+var lang;
+ var query = window.location.search;
+  // Skip the leading ?, which should always be there, 
+  // but be careful anyway
+  if (query.substring(0, 1) == '?') {
+    query = query.substring(1);
+  }
+  var data = query.split(','); 
+  for (i = 0; (i < data.length); i++) {
+    data[i] = unescape(data[i]);
+  }
+
+ lang=data[0];
+var header;
+var ads;
+var lango;
+
+var username;
+var password;
+var mail;
+var sigin;
+var btn_sigin;
+
+
+
+if( lang=='ar'){
+ads='إعلانات';
+lango='Change Language';
+header='المعرض والمؤتمر الدولي للتعليم <br> العالي 2011'
+
+username='اسم المستخدم';
+password='كلمة المرور';
+sigin='تسجيل اللدخول';
+btn_sigin='تسجيل';
+mail='البريد الإلكتروني';
+document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/pages_ar.css" >');
+document.write('<link rel="stylesheet" type="text/css" href="Css/images_ar.css">');
+}else {
+ads='Ads';
+lango='تغيير اللغة';
+header='Intl Exh & Conf on Higher<br>Education 2011';
+
+username='UserName';
+password='Password';
+sigin='Registration';
+btn_sigin='SignIn';
+mail='ُE-Mail';
+
+document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/pages_en.css" >');
+document.write('<link rel="stylesheet" type="text/css" href="Css/images_en.css">');
+
+}
+
+
+
+</script>
+<body >
+
+
+		<div id="header"> 
+        <a HREF="javascript:history.go(-1)">
+ <img class="back" onClick="goBack();" src="images/spacer.png" /></a>
+<a HREF="index.html"><img  src="images/spacer.png" class="home" onClick="goHome();"/></a>
+			<h5>   <script >document.write(header);</script> </h5>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+    
+ <ul id="categores" >
+             <li  > <form id="username">
+             <h2><a class="rega"><script> document.write( username+' : ');</script><input name="username" value="yahia"></a></h2></form>
+        </li>
+         </ul>
+         
+          <ul id="categores" >
+             <li  >   <form id="password1">
+             <h2><a class="rega"><script> document.write(password+' : ');</script><input name="password1" value="password" type="password"></a></h2>  </form> 
+        </li>
+         </ul>
+         
+               <ul id="categores" >
+             <li  >
+             <form id="mail">
+             <h2><a class="rega"><script> document.write(mail+' : ');</script><input name="mail"  value="yahia@mobilesoft.com"></a></h2>   </form>
+        </li>
+         </ul>
+       
+<ul id="categores" >
+             <li  >
+             <form id="reg">
+            <h2><a class="rega"><input type="button" style="width:150px" name="btnReg" value="asd" onClick="signUp();"> </a></h2>
+      </form>
+        </li>
+         </ul>
+ 
+             <script>
+			oFormObject = document.forms['reg'];
+           oFormObject.elements["btnReg"].value =btn_sigin;
+            </script>
+  
+</div>
+
+
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" class="ads"src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+
+</div>
+</div>
+		</div>
+<script>
+function signUp(){
+	
+	oFormObject = document.forms['username'];
+username=    oFormObject.elements["username"].value ;
+
+	oFormObject = document.forms['password1'];
+password1=    oFormObject.elements["password1"].value ;
+
+	oFormObject = document.forms['mail'];
+mail=    oFormObject.elements["mail"].value ;
+
+
+	window.location = "http://localhost/hadath/connect.php?u="+username+"&p="+password1;	 
+	}
+
+</script>
+
+
+
+	</body>
+     
+</html>

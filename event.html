@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title id="title">  </title>
+
+<script type="text/javascript" src="js/onloadEvent.js" ></script>
+
+<script type="text/javascript">
+var  dats=[];
+
+  var query = window.location.search;
+  
+  if (query.substring(0, 1) == '?') {
+    query = query.substring(1);
+  }
+  var data = query.split(','); 
+  for (i = 0; (i < data.length); i++) {
+    dats[i] = unescape(data[i]);
+
+  }
+data=dats[1]-1;
+
+if(dats[2]=='1'){
+	createCookie(dats[1],true,1000);
+}if(dats[2]=='2'){
+	createCookie(dats[1],false,1000);	
+}
+
+
+
+var header;
+var ads;
+var dec;
+var btn_addToFavo;
+var btn_addAttend;
+var lang=dats[0];
+var hall;
+
+if( lang=='ar'){
+ads='إعلانات';
+dec='تفاصيل الحدث';
+header='المعرض والمؤتمر الدولي للتعليم <br> العالي 2011';
+btn_addToFavo='أضف إلى جدولي';
+btn_removeFromFavo='حذف من جدولي';
+btn_addAttend='سوف أحضر هذا الحدث';
+hall='صالة : ';
+document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/persons_ar.css" >');
+}else {
+ads='Ads';
+dec='Event Detalis';
+btn_addToFavo='ِAdd To My Schdeual';
+btn_removeFromFavo='ٌRemove From My Schdeual';
+btn_addAttend='Will attend';
+header='Intl Exh & Conf on Higher<br>Education 2011'
+hall='hall : ';
+document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/persons_en.css" >');
+}
+</script>
+
+
+<body  >
+ 
+		<div id="header">
+     		<a id="BackToAgenda">
+ <img class="backAgenda"   src="images/spacer.png"/></a>
+<a id="homeURL"><img class="home"  src="images/spacer.png"/></a>
+			<h5  >  <script >
+			document.getElementById('homeURL').href='index.html?'+lang;
+			document.getElementById('BackToAgenda').href='agenda.html?'+lang;
+			document.write(header);</script>  </h5>
+		</div>
+		
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+     
+    <ul id="Events_html">
+
+    <li id="Event_Detalis"></li>
+    </ul><!--
+    <form id="favoForm">
+    <input  type="button" value="أضف إلى المفضلة" name="favo" onClick="AddtoFavo();"/>
+   
+    <br>
+    </form>-->
+   
+    </div>
+        			<div id="home">
+                
+    <h1><a ><script> document.write(dec);</script>  </a></h1>
+        <ul id="Event_Description">
+
+    <li id="Event_Description" ></li>
+   
+        
+    </ul>
+  
+  
+</div>
+
+
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+</div>
+</div>
+		</div>
+        
+      
+
+<script>
+
+ 
+  
+getEvents(callback);
+
+ function callback(string,htmlID ){  
+	 var result_Events_html = document.getElementById('Events_html'); 
+	 var array=eval(string);
+
+		htmll1=[]; 
+		 
+htmll1.push(	'<li class="Event_Detalis"><a  class="person" ><h2>'+array[data].Name+'</h2><h3>'+array[data].day+'<br>'+array[data].Time+'<br> '+hall+array[data].Hall+'</h3></a><br><br></li>'	 );
+
+if(readCookie(dats[1])=='true'){
+
+htmll1.push('<input type="hidden" style="font-size: 12px;" value="'+btn_addToFavo+'" onClick="addToFavo('+array[data].ID+');" >');
+htmll1.push('<input type="button" style="font-size: 12px;" value="'+btn_removeFromFavo+'" onClick="removeFromFavo('+array[data].ID+');">');
+//htmll1.push('<input type="button" style="font-size: 12px;" value="'+btn_addAttend+'" onClick="addAttend('+array[data].ID+');">');
+}else {
+
+htmll1.push('<input type="button" style="font-size: 12px;" value="'+btn_addToFavo+'" onClick="addToFavo('+array[data].ID+');" >');
+htmll1.push('<input type="hidden" style="font-size: 12px;" value="'+btn_removeFromFavo+'" onClick="removeFromFavo('+array[data].ID+');">');
+//htmll1.push('<input type="button" style="font-size: 12px;"  value="'+btn_addAttend+'" onClick="addAttend('+array[data].ID+');">');	
+}
+
+
+	 result_Events_html.innerHTML = htmll1.join('');	
+	 
+	 htmll1=[];
+ var result_Event_Description = document.getElementById('Event_Description');
+htmll1.push(	'<li class="Event_Description"><a  class="person" > <h3>'+array[data].Description+'</h3></a></li>'	 );
+
+ 
+	 
+	 result_Event_Description.innerHTML = htmll1.join('');	
+
+	 
+  
+
+ }
+ 
+function addToFavo(id){
+window.location = "signin.html?"+lang+","+id;
+}
+
+function removeFromFavo(id){
+window.location = "signin.html?"+lang+","+id+",del";
+}
+ 
+function addAttend(id){
+	document.write('addAttend()'+id	);
+}
+ </script>
+
+
+	</body>
+</html>

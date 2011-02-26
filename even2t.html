@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+<link rel="stylesheet" type="text/css" href="Css/persons_ar.css" >
+
+
+        <script src="js/db.js" ></script>
+<script type="text/javascript">
+var header='افتتاح المعرض';
+var htmll=[];
+
+function checkIfExist(eventID){
+	
+
+if (window.openDatabase) {
+ 
+ db.transaction(function (tx) {
+
+    tx.executeSql('select * from favo',[],function (tx,results){
+		len=	results.rows.length;
+		htmll.push('len : '+len+'<br>Even ID = '+eventID+'<br>');
+				
+ 		for(i=0;i<len;i++){
+			var row=results.rows.item(i);
+			if(row['event']==eventID ){
+
+				htmll.push('TRUE : row[event] : '+row['event']);
+				Event_Description.innerHTML = htmll.join('');
+				return( true);
+				}
+			
+		}
+
+				htmll.push('Else : row[event] : '+row['event']);
+				Event_Description.innerHTML = htmll.join('');
+
+				return( false);
+					
+		
+
+	});
+
+  }); 
+}
+	
+}
+
+function AddtoFavo(){/*
+checkIfExist('111');
+htmll.push('Finish');
+Event_Description.innerHTML = htmll.join('');*/
+	if(!checkIfExist('1')){
+			htmll.push('<br>true');		
+			Event_Description.innerHTML = htmll.join('');
+			alert('true');
+
+	}else {
+			htmll=['Flase'];		
+			Event_Description.innerHTML = htmll.join('');
+			alert('false');
+	}
+
+}
+
+
+
+</script>
+
+
+<body >
+ 
+		<div id="header">
+     		<a HREF="javascript:history.go(-1)">
+ <img class="back" onClick="goBack();" /></a>
+<a HREF="index.html"><img class="home" onClick="goHome();"/></a>
+			<h1>    <script >document.write(header);</script> </h1>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+     
+    <ul id="Events_html">
+
+    <li id="Event_Detalis"></li>
+    </ul>
+    <form>
+    <input  type="button" value="أضف إلى المفضلة" onClick="AddtoFavo();"/>
+    <br>
+    </form>
+    
+    </div>
+        			<div id="home">
+                
+    <h1><a >تفاصيل الحدث  </a></h1>
+        <ul id="Events_html">
+
+    <li id="Event_Description" ></li>
+   
+        
+    </ul>
+  
+  
+</div>
+
+
+
+    			<div id="home">
+    <h1><a >إعلانات</a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+</div>
+</div>
+		</div>
+        
+        
+        
+        
+         <script>
+/*
+
+
+html =[];
+for( i=0;i<EventTopics.length;i++){
+html.push('<li><a >'+
+'<img src="'+EventImg[0]+'"/>'
++'<h2>'+EventName[0] +'</h2> <h3 style="padding-right:210px">'+EventCompany[0]+'<br>'+EventPosition[0]+'<br>'+EventAbout[0]+'<br>'+EventTopics[0]+'</h3></a></li>');	
+
+}*/
+var Event_ID = 1; 
+var Event_Detalis = document.getElementById('Event_Detalis'); 
+var EventName='افتتاح المعرض';
+var EventDate='الثلاثاء 20 , فبراير  2011';
+var EventHall='صالة : 1';
+var EventTime='9:00 AM to 11:00 PM';
+
+
+var html =['<a  class="person" ><h2>'+EventName+'</h2><h3>'+EventDate+'<br>'+EventTime+'<br>'+EventHall+'</h3></a><br><br>'];
+
+Event_Detalis.innerHTML = html.join('');
+
+
+var Event_Description = document.getElementById('Event_Description'); 
+var EventDescription=['<a  class="person" > <h3> تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل ..  تفاصيل .. </h3></a>'];
+html=[EventDescription];
+Event_Description.innerHTML = html.join('');
+
+
+	</script>
+    
+                <script src="DBProcess.js" ></script>
+	</body>
+</html>

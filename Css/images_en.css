@@ -1,0 +1,33 @@
+li.agenda{
+	background:url(../images/agenda.png) no-repeat left  ;		
+}
+li.attendees{
+	background:url(../images/attendees.png) no-repeat left  ;		
+}
+li.speakers{
+	background:url(../images/speakers.png) no-repeat left  ;		
+}
+li.exhibitors{
+	background:url(../images/companies.png) no-repeat left  ;		
+}
+li.livefeeds{
+	background:url(../images/feeds.png) no-repeat left  ;		
+}
+li.eventsurvey{
+	background:url(../images/survey.png) no-repeat left  ;		
+}
+li.alerts{
+	background:url(../images/alerts.png) no-repeat left  ;		
+}
+li.info{
+	background:url(../images/infobooth.png) no-repeat left  ;		
+}
+li.map{
+	background:url(../images/maps.png) no-repeat left  ;		
+}
+
+li.favos{
+	background:url(../images/favo.png) no-repeat left  ;		
+	padding:10px;
+
+}

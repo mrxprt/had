@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+<link rel="stylesheet" type="text/css" href="Css/pages_ar.css" >
+<link rel="stylesheet" type="text/css" href="Css/images_ar.css">
+
+<script type="text/javascript">
+var header='أجندة الحدث';
+
+ 
+</script>
+
+
+<body >
+
+
+		<div id="header"> 
+        <a HREF="javascript:history.go(-1)">
+ <img class="back" onClick="goBack();" /></a>
+<a HREF="index.html"><img class="home" onClick="goHome();"/></a>
+			<h5>   <script >document.write(header);</script> </h5>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+    
+    <ul id="Events_html">
+    
+
+        
+    </ul>
+    <script>
+var events=['افتتاح المعرض','حدث 2','حدث 3','حدث 4','حدث 5','حدث 6','حدث 7'];
+var Locations=['صالة : 1','صالة 2 ','صالة 3 ','صالة 4 ','صالة 5 ','صالة 6 ','صالة 7 '];
+var Time=['9:0 am to 11:00 Pm','9:0 am','9:0 am','9:0 am','9:0 am','9:0 am','9:0 am'];
+var Link=['event.html'];
+
+var html=[];
+var i;
+
+for( i=0;i<events.length;i++){
+html.push('<li><a href="'+Link[0]+'"><h2>'+events[i] +'<br></h2>'+'<h3>'+Locations[i]+'<br>'+Time[i]+'</h3></a></li>');	
+
+}
+
+var Events_html = document.getElementById('Events_html'); 
+
+Events_html.innerHTML = html.join('');
+	</script>
+</div>
+
+
+
+    			<div id="home">
+    <h1><a >إعلانات</a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+</div>
+</div>
+		</div>
+
+	</body>
+</html>

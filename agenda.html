@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PhoneGap API Documentation</title>
+
+
+
+<script type="text/javascript">
+ var lang;
+var query = window.location.search;
+  // Skip the leading ?, which should always be there, 
+  // but be careful anyway
+  if (query.substring(0, 1) == '?') {
+    query = query.substring(1);
+  }
+  var data = query.split(','); 
+  for (i = 0; (i < data.length); i++) {
+    data[i] = unescape(data[i]);
+  }
+  
+
+var ads;
+var header;
+
+lang=data[0];
+if( lang=='ar'){
+	ads='إعلانات';
+	header='المعرض والمؤتمر الدولي للتعليم <br> العالي 2011';
+document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/pages_ar.css" >');
+}else {
+	ads='Ads';
+header='Intl Exh & Conf on Higher<br>Education 2011'
+document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
+document.write('<link rel="stylesheet" type="text/css" href="Css/pages_en.css" >');
+}
+</script>
+
+
+
+ 
+
+
+<body >
+
+
+		<div id="header"> 
+        <a id="homeURL1">
+ <img class="back" onClick="goBack();" src="images/spacer.png"/></a>
+<a id="homeURL"><img class="home" onClick="goHome();" src="images/spacer.png"/></a>
+			<h5>   <script >
+			document.getElementById('homeURL').href='index.html?'+lang;
+			document.getElementById('homeURL1').href='index.html?'+lang;
+			document.write(header);</script> </h5>
+		</div>
+
+		<div id="scrollable">
+        		
+
+    		<div id="content">
+    			<div id="home">
+                
+    <h1><a > </a></h1>
+    
+    <ul id="Events_html">
+    
+
+        
+    </ul>
+    <script>
+	/*
+var events=['افتتاح المعرض','حدث 2','حدث 3','حدث 4','حدث 5','حدث 6','حدث 7'];
+var Locations=['صالة : 1','صالة 2 ','صالة 3 ','صالة 4 ','صالة 5 ','صالة 6 ','صالة 7 '];
+var Time=['9:0 am to 11:00 Pm','9:0 am','9:0 am','9:0 am','9:0 am','9:0 am','9:0 am'];
+var Link=['event.html'];
+
+var html=[];
+var i;
+
+for( i=0;i<events.length;i++){
+html.push('<li><a href="'+Link[0]+'"><h2>'+events[i] +'<br></h2>'+'<h3>'+Locations[i]+'<br>'+Time[i]+'</h3></a></li>');	
+
+}
+
+var Events_html = document.getElementById('Events_html'); 
+
+Events_html.innerHTML = html.join('');*/
+	</script>
+</div>
+
+
+
+    			<div id="home">
+    <h1><a ><script> document.write(ads);</script> </a></h1>
+    <ul>
+
+        
+<li>
+  <img border="0" class="ads"  src="images/ads.png" alt="Pulpit rock" width="304" height="228" />
+</li>
+
+        
+    </ul>
+</div>
+</div>
+
+
+
+
+<script>
+getEvents(callback);
+
+ function callback(string,htmlID  ){
+	 var result = document.getElementById(htmlID); 
+	 var array=eval(string);
+	 	 htmll1=[];
+	 for(var i=0;i<array.length;i++){
+		 
+htmll1.push('<ul id="Events_html"><li><a href="javascript:sendData(\''+lang+'\','+array[i].ID+')"><h2>'+array[i].Name +'<br></h2>'+'<h3>'+array[i].Hall+'<br>'+array[i].day+'<br>'+array[i].Time+'</h3></a></li></ul>');	
+
+	 result.innerHTML = htmll1.join('');		 
+	 
+	 /*
+htmll1.push('<li><a href="'+array[i].Page+'"><h2>'+array[i].Name +'<br></h2>'+'<h3>'+array[i].Hall+'<br>'+array[i].day+'<br>'+array[i].Time+'</h3></a></li>');	
+
+	 result.innerHTML = htmll1.join('');		 */
+		 
+	 }
+ }
+function sendData(lan,id){
+
+ window.location = "event.html?"+lan+',' + id;
+	
+}
+</script>
+		</div>
+
+	</body>
+</html>

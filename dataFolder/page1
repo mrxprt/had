@@ -1,0 +1,59 @@
+﻿[
+				{	
+					"title":" جدول الأعمال",
+					"class":"agenda",
+					"page":"agenda.html",
+					"ID":1
+				
+				},
+		
+				{	
+					"title":"الحضور",
+					"class":"attendees",
+					"page":"attendees.html",
+					"ID":2
+				
+				},
+		
+				{	
+					"title":"المتحدثون",
+					"class":"speakers",
+					"page":"speakers.html",
+					"ID":3
+				
+				},
+		
+				{	
+					"title":"العارضون",
+					"class":"exhibitors",
+					"page":"exhibitors.html",
+					"ID":4
+				
+				},
+		
+				{	
+					"title":"Live Feeds",
+					"class":"livefeeds",
+					"page":"feedscats.html",
+					"ID":5
+				
+				},
+		
+				{	
+					"title":"المفضلة",
+					"class":"favos",
+					"page":"favos.html",
+					"ID":6
+				
+				},
+		
+				{	
+					"title":"خريطة الحدث",
+					"class":"map",
+					"page":"maps.html",
+					"ID":7
+				
+				}
+		
+		
+		]
