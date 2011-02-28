@@ -15,6 +15,15 @@ width:50px;
 height:30px;
 border:none;
 } 
+#header  img.backInfo{
+background:url(../images/backbuttonInfo.png)  no-repeat center;
+float:left;
+padding:5px 10px;
+width:50px;
+height:30px;
+border:none;
+-webkit-border-image:none;
+}
 
 
 #header  img.Blankbackbutton{
@@ -150,8 +159,8 @@ padding: 10px 0px;
 	
 	display:block;
 	height:150%;
-	margin::10px 10px;
 	width:100%;
+    margin::10px 10px;
 }
 #home ul li:last-child,
 #index ul li:last-child {
@@ -200,14 +209,13 @@ padding: 10px 0px;
 
 #home li h2 a.rega{
 
- background:none;
-  color:#66686A;
-  display:block;
-  font-size:14px;
-direction:rtl;
-
-  margin:0px;
-  padding:10px 50px;
+		 background:none;
+		  color:#66686A;
+		  display:block;
+		  font-size:14px;
+		  direction:rtl;
+		  margin:0px;
+		  padding:10px 50px;
 
 }
 

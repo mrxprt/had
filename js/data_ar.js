@@ -1,4 +1,42 @@
-﻿function getCats(callback){
+﻿function getInfo(callback){
+var page=[
+				{	
+					"title":"عن المعرض",
+					"IImage":"conf",
+					"page":"mobilesoft.html",
+					"ID":'1'
+				
+				},
+		
+				{	
+					"title":"خريطة الحدث",
+					"IImage":"map",
+					"page":"maps.html",
+					"ID":2
+				
+				},
+		
+				{	
+					"title":"عن موبيل سوفت",
+					"IImage":"msoft",
+					"page":"mobilesoft.html",
+					"ID":3
+				
+				},
+		
+				{	
+					"title":"سياسة الخصوصية",
+					"IImage":"exhibitors",
+					"page":"privace.html",
+					"ID":4
+				
+				}
+		];
+		callback(page,'home');
+}
+
+
+function getCats(callback){
 var page=[
 				{	
 					"title":" جدول الأعمال",
@@ -43,9 +81,9 @@ var page=[
 			
 		
 				{	
-					"title":"خريطة الحدث",
-					"IImage":"map",
-					"page":"maps.html",
+					"title":"معلومات",
+					"IImage":"infobooth",
+					"page":"info.html",
 					"ID":7
 				
 				}
@@ -401,6 +439,18 @@ function getexhibitors(callback){
 var page=[
 {	 				"CompnayName":"Mobile Soft1",
 					"IImage":"images/logo.png",
+					"AboutCompnay":" نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...<br>Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..",	
+					"WebSite":"http://www.mobilesoft.com",
+					"Phone":"009660000000",
+					"FaceBook":"http://www.facebook.com/yahiaragae",
+					"Twitter":"http://twitter.com/mobilesoft",
+					"linkIn":"http://asdasd.com",
+					"Country":"Egypt",
+					"ID":1
+					
+				},
+				{	"CompnayName":"المعرض والمؤتمر الدولي للتعليم  العالي 2011",
+					"IImage":"images/confIcon.png",
 					"AboutCompnay":" نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...<br>Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..",	
 					"WebSite":"http://www.mobilesoft.com",
 					"Phone":"009660000000",

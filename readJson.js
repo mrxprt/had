@@ -81,7 +81,7 @@ function getXmlHttp() {
    return xmlhttp;
 }
 
-function openPhp(callBack,u,p,l){
+function openPhp(callBack,url){
 	var mygetrequest= new XMLHttpRequest();
 
  	 
@@ -90,6 +90,8 @@ mygetrequest.onreadystatechange=function(){
 
 	   		 
   if (mygetrequest.status==200 || window.location.href.indexOf("http")==-1){
+
+
 	callBack(mygetrequest.responseText);
   }
   else{
@@ -100,7 +102,7 @@ mygetrequest.onreadystatechange=function(){
  }
 };
 
-mygetrequest.open("GET",'http://localhost/hadath/signIn.php?u='+u+'&p='+p+'&l='+l, true);
+mygetrequest.open("GET",url, true);
 
 mygetrequest.send(null);
 }

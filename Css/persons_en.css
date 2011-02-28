@@ -73,7 +73,7 @@ border:none;
 }
 
 #header  img.home{
-background:url(../images/homeEn.png)  no-repeat center;
+background:url(../images/homeEN.png)  no-repeat center;
 float:right;
 padding:5px 10px;
 width:50px;
@@ -133,7 +133,7 @@ border:none;
 
 #home,
 #index {
-  margin:40px 10px;
+  margin:10px 10px;
 }
 
 #home h1,

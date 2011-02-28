@@ -43,9 +43,9 @@ var page=[
 				
 		
 				{	
-					"title":"map",
-					"IImage":"map",
-					"page":"maps.html",
+					"title":"Info",
+					"IImage":"infobooth",
+					"page":"info.html",
 					"ID":7
 				
 				}
@@ -400,7 +400,7 @@ var page=[
 function getexhibitors(callback){
 var page=[
 {	 				"CompnayName":"Mobile Soft1",
-					"IImage":"images/mobilesoftlogo.png",
+					"IImage":"images/logo.png",
 					"AboutCompnay":" نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...نبذة عن الشركة ...<br>Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..Mobile Soft Movile Apps Company , ..",	
 					"WebSite":"http://www.mobilesoft.com",
 					"Phone":"009660000000",

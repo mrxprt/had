@@ -169,6 +169,111 @@ document.write('<link rel="stylesheet" type="text/css" href="Css/images_en.css">
 		</div>
         	<script src="readJson.js"></script>
 <script>
+var str_added;
+var str_deleted;
+var str_tryagain;
+var str_error_mail;
+var str_error_Duplication;
+var str_reg_done;
+
+if(lang=='ar'){
+str_added='تم الإضافة بنجاح';
+str_deleted='تم الحذف بنجاح';
+str_tryagain='عفواً , إدخالك غير صحيح برجاء المحاولة مرة أخرى';
+str_error_mail='هذا البريد غير صالح';
+str_error_Duplication='هذا البريد مسجل من قبل'
+str_reg_done='تم التسجيل بنجاح'	
+}else {
+	str_added='Event Added';
+str_deleted='Event Deleted';
+str_tryagain='Sorry , your input is incorrect';
+str_error_mail='Sorry , this is not an e-mail !!';
+str_error_Duplication='Sorry , this mail is exist'
+str_reg_done='Congratulations , your registration is done'	
+} 
+
+function callBack	(txt){
+
+ var r=txt.split('');
+ var h='';
+   document.write('txt: '+txt);
+  document.write('<br>r[1]: '+r[1]);
+ switch(r[1]){
+	case '1':
+	alert(str_added); 
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}
+		window.location =  h;
+	break; 
+	case '2':
+	h='';
+	alert(str_deleted); 
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}document.write('H: '+h);
+		window.location =  h;
+	break; 
+	case 'x':
+
+			alert(str_tryagain ); 		
+	
+
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}
+		window.location =  'signin.html?'+lang+','+data[1];
+	break;
+	case 'm':
+	h='';
+	alert(str_error_mail); 
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}	//document.write('H: '+h);
+
+		window.location =  'signin.html?'+lang+','+data[1];
+	break; 
+	
+		case 'e':
+	h='';
+	alert(str_error_Duplication); 
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}	//document.write('H: '+h);
+
+		window.location =  'signin.html?'+lang+','+data[1];
+	break; 	case 'D':
+	h='';
+	alert(str_error_Duplication); 
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}	//document.write('H: '+h);
+
+		window.location =  'signin.html?'+lang+','+data[1];
+	break; 
+	case 'd':
+	h='';
+	alert(str_reg_done); 
+	for(i=2;i<r.length;i++){
+		 	 
+		h+=	r[i];
+	}	//document.write('H: '+h);
+
+		window.location =  'agenda.html?'+lang+','+data[1];
+	break; 
+
+
+ }
+	
+ 	 
+
+}
 function signIn(){
 	if(data[2]!='del'){
 	oFormObject = document.forms['username'];
@@ -186,15 +291,18 @@ function signIn(){
 		createCookie('status',checkBoxStatus,1000);
 	}
 	
-/*function callBack	(txt){
-	//document.write(txt);
-}
-//openPhp(callBack,username,password1,lang);*/
+
+var f='http://www.mrxprt.com/hadath_php/signIn.php?u='+username+'&p='+password1+'&l='+lang+'&e='+data[1];
+//var f='http://www.mrxprt.com/hadath_php/signIn.php?u='+username+'&p='+password1+'&l='+lang+'&e='+data[1];
+openPhp(callBack,f);
 
 
 
-	window.location = "http://www.mrxprt.com/hadath_php/signIn.php?u="+username+"&p="+password1+'&l='+lang+'&e='+data[1];	 
+//	window.location = "http://www.mrxprt.com/hadath_php/signIn.php?u="+username+"&p="+password1+'&l='+lang+'&e='+data[1];
+	
+		 
 	}else {
+
 		oFormObject = document.forms['username'];
 	username=    oFormObject.elements["username"].value ;
 	
@@ -209,9 +317,12 @@ function signIn(){
 		createCookie('pass',password1,1000);
 		createCookie('status',checkBoxStatus,1000);
 	}
- 
+ var f='http://www.mrxprt.com/hadath_php/remove_from_favo.php?u='+username+'&p='+password1+'&l='+lang+'&e='+data[1];
+ //document.writeln(f);
+//var f="http://www.mrxprt.com/hadath_php/remove_from_favo.php?u="+username+"&p="+password1+'&l='+lang+'&e='+data[1];
+openPhp(callBack,f);
 
-	window.location = "http://www.mrxprt.com/hadath_php/remove_from_favo.php?u="+username+"&p="+password1+'&l='+lang+'&e='+data[1];	 
+	//window.location = "http://www.mrxprt.com/hadath_php/remove_from_favo.php?u="+username+"&p="+password1+'&l='+lang+'&e='+data[1];	 
 	}
 }
 
@@ -233,14 +344,12 @@ function signUp(){
 		createCookie('status',checkBoxStatus,1000);
 	}
 	
-/*function callBack	(txt){
-	//document.write(txt);
-}
-//openPhp(callBack,username,password1,lang);*/
 
-
-
-	window.location = "http://www.mrxprt.com/hadath_php/signUp.php?m="+username+"&p="+password1+'&l='+lang;	 
+ var f="http://www.mrxprt.com/hadath_php/signUp.php?m="+username+"&p="+password1+'&l='+lang+'&e='+data[1];
+// document.write(f);
+//var f="http://www.mrxprt.com/hadath_php/remove_from_favo.php?u="+username+"&p="+password1+'&l='+lang+'&e='+data[1];
+openPhp(callBack,f);
+//	window.location = "http://www.mrxprt.com/hadath_php/signUp.php?m="+username+"&p="+password1+'&l='+lang;	 
 }
 
 </script>

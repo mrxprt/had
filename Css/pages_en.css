@@ -27,13 +27,14 @@ height:30px;
 } 
 
 #header  img.home{
-background:url(../images/homeEn.png)  no-repeat center;
+background:url(../images/homeEN.png)  no-repeat center;
 float:right;
 padding:5px 10px;
 width:50px;
 height:30px;
 border:none;
 }
+
 #header {
  user-scalable=no;
  background-color:#515151;
@@ -192,10 +193,7 @@ padding: 10px 0px;
   background:url(../images/arrowen.png) no-repeat 50% right;
   color: #4C4D4F;
   display:block;
-  
   margin:0px;
- 
-
 }
 
 #home li h2 a.rega{

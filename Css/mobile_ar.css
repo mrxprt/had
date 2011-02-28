@@ -8,7 +8,24 @@ background-color: #F6F4F2;
 }
 
 
-
+#header  img.back{
+background:url(../images/backbutton.png)  no-repeat center;
+float:left;
+padding:5px 10px;
+width:50px;
+height:30px;
+border:none;
+-webkit-border-image:none;
+}
+#header  img.home{
+background:url(../images/home.png)  no-repeat center;
+float:right;
+padding:5px 10px;
+width:50px;
+height:30px;
+border:none;
+-webkit-border-image:none;
+}
 #header {
  user-scalable=no;
  background-color:#515151;

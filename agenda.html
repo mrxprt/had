@@ -22,16 +22,18 @@ var query = window.location.search;
 
 var ads;
 var header;
-
+var hall;
 lang=data[0];
 if( lang=='ar'){
 	ads='إعلانات';
 	header='المعرض والمؤتمر الدولي للتعليم <br> العالي 2011';
+	hall='صالة : ';
 document.write('<script type="text/javascript" src="js/data_ar.js" ></scr'+'ipt>');
 document.write('<link rel="stylesheet" type="text/css" href="Css/pages_ar.css" >');
 }else {
 	ads='Ads';
 header='Intl Exh & Conf on Higher<br>Education 2011'
+hall='Hall : ';
 document.write('<script type="text/javascript" src="js/data_en.js" ></scr'+'ipt>');
 document.write('<link rel="stylesheet" type="text/css" href="Css/pages_en.css" >');
 }
@@ -117,7 +119,7 @@ getEvents(callback);
 	 	 htmll1=[];
 	 for(var i=0;i<array.length;i++){
 		 
-htmll1.push('<ul id="Events_html"><li><a href="javascript:sendData(\''+lang+'\','+array[i].ID+')"><h2>'+array[i].Name +'<br></h2>'+'<h3>'+array[i].Hall+'<br>'+array[i].day+'<br>'+array[i].Time+'</h3></a></li></ul>');	
+htmll1.push('<ul id="Events_html"><li><a href="javascript:sendData(\''+lang+'\','+array[i].ID+')"><h2>'+array[i].Name +'<br></h2>'+'<h3>'+hall+array[i].Hall+'<br>'+array[i].day+'<br>'+array[i].Time+'</h3></a></li></ul>');	
 
 	 result.innerHTML = htmll1.join('');		 
 	 

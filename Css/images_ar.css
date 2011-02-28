@@ -31,3 +31,24 @@ li.favos{
 	padding:10px;
 
 }
+li.infobooth{
+	background:url(../images/infobooth.png) no-repeat right  ;		
+	padding:10px;
+
+}
+li.conf{
+	background:url(../images/conf.png) no-repeat right  ;		
+	padding:10px;
+
+}
+
+li.msoft{
+	background:url(../images/msoft.png) no-repeat right  ;		
+	padding:10px;
+
+}
+li.confIcon{
+	background:url(../images/confIcon.png) no-repeat right  ;		
+	padding:10px;
+
+}
